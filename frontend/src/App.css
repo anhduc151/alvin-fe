@@ -1,0 +1,47 @@
+.markdown-body {
+  overflow-x: auto;
+}
+
+.markdown-body img {
+  max-width: 100%;
+}
+
+.markdown-body *:first-child:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+  margin-top: 0;
+}
+
+.markdown-body *:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body p {
+  white-space: break-spaces;
+}
+
+/* css login */
+
+.login_name {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  position: absolute;
+  top: 1%;
+  left: 2%;
+}
+
+.login_name_logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.login_name_title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.loginTitle {
+  color: blue;
+  font-size: 20px;
+}
