@@ -20,6 +20,7 @@ const AuthTemplate = ({
         height: '100vh',
         width: '100vw',
         alignItems: 'center',
+        border: '1px solid #fff',
         justifyContent: 'center'
       }}
     >

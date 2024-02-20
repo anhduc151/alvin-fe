@@ -17,7 +17,7 @@ export default function WaterMark() {
   return (
     <Stack mx="auto" className="watermark">
       <a
-        href="https://github.com/Chainlit/chainlit"
+        href="https://alvin-nine.vercel.app/"
         target="_blank"
         style={{
           display: 'flex',

@@ -7,10 +7,11 @@ import { AuthLogin } from '@chainlit/react-components';
 
 import { Logo } from 'components/atoms/logo';
 
+import logo from '../assets/logo.png';
+
 import { useQuery } from 'hooks/query';
 
 import { apiClientState } from 'state/apiClient';
-import logo from '../assets/logo.png'
 
 export default function Login() {
   const query = useQuery();
@@ -50,7 +51,7 @@ export default function Login() {
 
   useEffect(() => {
     setError(query.get('error') || '');
-    document.title = "Login - Alvin AI"
+    document.title = 'Login - Alvin AI';
   }, [query]);
 
   useEffect(() => {
@@ -69,23 +70,25 @@ export default function Login() {
   }, [config, user]);
 
   return (
-    <>
-    <div className="login_name">
-     <img src={logo} alt=""  className='login_name_logo'/>
-     <p className='login_name_title'>Alvin AI</p>
-    </div>
+    <div className="login">
+      <div className="login_name">
+        <img src={logo} alt="" className="login_name_logo" />
+        <p className="login_name_title">Alvin AI</p>
+      </div>
 
-    <AuthLogin
-      title="Login"
-      error={error}
-      callbackUrl="/"
-      providers={config?.oauthProviders || []}
-      onPasswordSignIn={config?.passwordAuth ? handlePasswordLogin : undefined}
-      onOAuthSignIn={async (provider: string) => {
-        window.location.href = apiClient.getOAuthEndpoint(provider);
-      }}
-      renderLogo={<Logo style={{ maxWidth: '60%', maxHeight: '90px' }} />}
-    />
-    </>
+      <AuthLogin
+        title="Login"
+        error={error}
+        callbackUrl="/"
+        providers={config?.oauthProviders || []}
+        onPasswordSignIn={
+          config?.passwordAuth ? handlePasswordLogin : undefined
+        }
+        onOAuthSignIn={async (provider: string) => {
+          window.location.href = apiClient.getOAuthEndpoint(provider);
+        }}
+        // renderLogo={<Logo style={{ maxWidth: '60%', maxHeight: '90px' }} />}
+      />
+    </div>
   );
 }
