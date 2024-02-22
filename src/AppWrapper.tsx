@@ -26,21 +26,38 @@ export default function AppWrapper() {
     i18n.changeLanguage(languageInUse);
   }
 
+  // const { data } = useApi<IProjectSettings>(
+  //   apiClient,
+  //   projectSettings === undefined && isAuthenticated
+  //     ? `/project/settings?language=${languageInUse}`
+  //     : null
+  // );
+
+  // if (
+  //   isReady &&
+  //   !isAuthenticated &&
+  //   window.location.pathname !== '/login' &&
+  //   window.location.pathname !== '/login/callback'
+  // ) {
+  //   window.location.href = '/login';
+  // }
+
   const { data } = useApi<IProjectSettings>(
     apiClient,
     projectSettings === undefined && isAuthenticated
       ? `/project/settings?language=${languageInUse}`
       : null
-  );
+);
 
-  if (
+if (
     isReady &&
     !isAuthenticated &&
     window.location.pathname !== '/login' &&
-    window.location.pathname !== '/login/callback'
-  ) {
-    window.location.href = '/login';
-  }
+    window.location.pathname !== '/login/callback' &&
+    window.location.pathname !== '/'
+) {
+    window.location.href = '/';
+}
 
   useEffect(() => {
     if (!data) return;

@@ -68,8 +68,8 @@ export function overrideTheme(theme: Theme) {
 
 function App() {
   // dafault dark mode
-  // const themeVariant = 'dark';
-  const { theme: themeVariant } = useRecoilValue(settingsState);
+  const themeVariant = 'dark';
+  // const { theme: themeVariant } = useRecoilValue(settingsState);
   const pSettings = useRecoilValue(projectSettingsState);
   // @ts-expect-error custom property
   const fontFamily = window.theme?.font_family;
