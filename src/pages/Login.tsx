@@ -5,7 +5,7 @@ import { useRecoilValue } from 'recoil';
 
 import { AuthLogin } from '@chainlit/react-components';
 
-import { Logo } from 'components/atoms/logo';
+// import { Logo } from 'components/atoms/logo';
 
 import logo from '../assets/logo.png';
 
@@ -59,13 +59,13 @@ export default function Login() {
       return;
     }
     if (!config.requireLogin) {
-      navigate('/');
+      navigate('/message');
     }
     if (config.headerAuth) {
       handleHeaderAuth();
     }
     if (user) {
-      navigate('/');
+      navigate('/message');
     }
   }, [config, user]);
 
@@ -79,7 +79,7 @@ export default function Login() {
       <AuthLogin
         title="Login"
         error={error}
-        callbackUrl="/"
+        callbackUrl="/message"
         providers={config?.oauthProviders || []}
         onPasswordSignIn={
           config?.passwordAuth ? handlePasswordLogin : undefined
