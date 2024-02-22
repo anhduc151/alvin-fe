@@ -2,8 +2,15 @@ import { toast } from 'sonner';
 
 import { ChainlitAPI, ClientError } from '@chainlit/react-client';
 
-const devServer = 'https://crypto-beat--alvin.modal.run';
-const url = import.meta.env.DEV ? devServer : window.origin;
+// const devServer = 'https://crypto-beat--alvin.modal.run';
+// const api_server = import.meta.env.VITE_SERVER_API;
+// const url = import.meta.env.DEV ? devServer : window.origin;
+// const serverUrl = new URL(url);
+const api_server = import.meta.env.VITE_SERVER_API;
+
+const devServer = api_server;
+// const url = import.meta.env.DEV ? devServer : window.origin;
+const url = devServer;
 const serverUrl = new URL(url);
 
 const httpEndpoint = `${serverUrl.protocol}//${serverUrl.host}`;
