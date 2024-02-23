@@ -73,9 +73,7 @@ const Thread = ({ thread, error, isLoading }: Props) => {
   );
 
   if (isLoading) {
-    return (
-      <>
-      {[1, 2, 3].map((index) => (
+    return [1, 2, 3].map((index) => (
       <Stack
         key={`thread-skeleton-${index}`}
         sx={{
@@ -99,9 +97,7 @@ const Thread = ({ thread, error, isLoading }: Props) => {
           }}
         />
       </Stack>
-    ))};
-      </>
-    )
+    ));
   }
 
   if (!thread || error) {
@@ -113,7 +109,6 @@ const Thread = ({ thread, error, isLoading }: Props) => {
   const messages = nestMessages(steps);
 
   return (
-    <>
     <Stack direction="row" flexGrow={1} width="100%" height="100%">
       <SideView>
         <Box
@@ -156,7 +151,6 @@ const Thread = ({ thread, error, isLoading }: Props) => {
         />
       </SideView>
     </Stack>
-    </>
   );
 };
 
